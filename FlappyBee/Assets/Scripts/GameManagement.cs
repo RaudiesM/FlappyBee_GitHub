@@ -8,6 +8,8 @@ public class GameManagement : MonoBehaviour
     private BeeMovement beeMovement;
     private BeeCollision beeCollision;
 
+    [SerializeField] private GameObject endscreen;
+
     private void Awake()
     {
         beeMovement = FindObjectOfType<BeeMovement>();
@@ -21,16 +23,16 @@ public class GameManagement : MonoBehaviour
         PauseOnCollision();
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         Time.timeScale = 1;
     }
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         SceneManager.LoadScene("GameScene");
     }
@@ -42,12 +44,18 @@ public class GameManagement : MonoBehaviour
             StartGame();
         }
     }
-    void PauseOnCollision()
+    private void PauseOnCollision()
     {
         if (beeCollision.collided)
         {
             PauseGame();
+            LoadEndscreen(true);
         }
+    }
+
+    private void LoadEndscreen(bool isActive)
+    {
+        endscreen.SetActive(isActive);
     }
 
 }

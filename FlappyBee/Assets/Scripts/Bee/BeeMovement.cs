@@ -11,12 +11,13 @@ public class BeeMovement : MonoBehaviour
     private bool isFlying;
     private bool isFalling;
     public bool gameStart { get; private set; }
-
+    private BeeAudio beeAudio;
 
 
     private void Start()
     {
         beeBody = GetComponent<Rigidbody2D>();
+        beeAudio = FindObjectOfType<BeeAudio>();
         flyingForce = new Vector2(0, pushForce);
     }
 
@@ -78,6 +79,7 @@ public class BeeMovement : MonoBehaviour
         if (isFlying)
         {
             beeBody.AddForce(flyingForce, ForceMode2D.Force);
+            beeAudio.PlayBuzzClip();
         }
     }
 

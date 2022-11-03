@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class BeeTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool hitPoints { get; private set; }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Gap"))
         {
-            Debug.Log("Punkt");
+            hitPoints = true;
         }
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("You hit something");
         }
+    }
+
+    public void ResetPointBool()
+    {
+        hitPoints = false;
     }
 
 }
