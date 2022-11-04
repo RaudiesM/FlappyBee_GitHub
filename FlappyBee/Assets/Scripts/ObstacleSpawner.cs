@@ -7,7 +7,10 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private GameObject obstacle;
     [SerializeField] private float startTime;
     [SerializeField] private float spawnTime;
+    /// positionDifference kann entfernt werden, 
+    
     [SerializeField] private float positionDifference;
+
 
     private void Start()
     {
@@ -16,6 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
     private void SpawnObstacle()
     {
         Instantiate(obstacle);
+        //obstacle.transform.position = new Vector3(10, 10, 0);
     }
 
     public float GetPosition()

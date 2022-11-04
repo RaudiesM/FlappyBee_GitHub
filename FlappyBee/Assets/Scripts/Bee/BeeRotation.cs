@@ -14,23 +14,21 @@ public class BeeRotation : MonoBehaviour
 
     private void Update()
     {
-       HandleRotation();
-       
+       HandleRotation();       
     }
-
 
     private void HandleRotation()
     {
         if (beeMovement.isFlying == false)
         {
-            if (transform.rotation.z >= -0.5663706f)
+            if (transform.rotation.z >= -0.3f)
             {
                 transform.Rotate(new Vector3(0, 0, -beeRotationFactor * Time.deltaTime));
             }
         }
         else
         {
-            if (transform.rotation.z <= 0.5663706f)
+            if (transform.rotation.z <= 0.3f)
             {
                 transform.Rotate(new Vector3(0, 0, beeRotationFactor * Time.deltaTime));
             }

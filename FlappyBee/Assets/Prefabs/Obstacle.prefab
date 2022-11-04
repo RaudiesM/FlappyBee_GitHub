@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971247963333874641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.9, y: -18.055882, z: 0}
+  m_LocalPosition: {x: 10, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a33cd86c7eeff47af94efe56e6ad74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topObstacle: {fileID: 3537265926008232961}
+  bottomObstacle: {fileID: 6247114932091797554}
   obstacleSpeed: 3.42
   lifespan: 7
   startPositionX: 13.58
@@ -161,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3537265926008232961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.91, z: 0}
+  m_LocalPosition: {x: 0, y: 6.2, z: 0}
   m_LocalScale: {x: 1, y: 9.652239, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -531,7 +533,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.23310089, y: -0.18554509}
+  m_Offset: {x: 0.12528515, y: 0.203542}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -542,5 +544,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5337982, y: 2.2073967}
+  m_Size: {x: 0.31816673, y: 9.406588}
   m_EdgeRadius: 0
