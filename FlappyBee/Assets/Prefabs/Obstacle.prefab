@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSpeed: 3.42
   lifespan: 7
+  startPositionX: 13.58
 --- !u!1 &3537265926008232961
 GameObject:
   m_ObjectHideFlags: 0

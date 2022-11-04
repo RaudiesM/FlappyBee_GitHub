@@ -14,8 +14,10 @@ public class BeeRotation : MonoBehaviour
 
     private void Update()
     {
-       HandleRotation();       
+       HandleRotation();
+       
     }
+
 
     private void HandleRotation()
     {

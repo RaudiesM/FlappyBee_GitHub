@@ -6,6 +6,7 @@ public class MoveObstacle : MonoBehaviour
 {
     [SerializeField, Range(0, 10)] private float obstacleSpeed;
     [SerializeField] private float lifespan;
+    [SerializeField] private float startPositionX;
     private ObstacleSpawner obstacleSpawner;
 
 
@@ -39,7 +40,7 @@ public class MoveObstacle : MonoBehaviour
     {
         float positionDifference = obstacleSpawner.GetPosition();
         float startHeight = Random.Range(-positionDifference, positionDifference);
-        transform.position = new Vector3(transform.position.x, startHeight, 0);
+        transform.position = new Vector3(startPositionX, startHeight, 0);
     }
 
 }
