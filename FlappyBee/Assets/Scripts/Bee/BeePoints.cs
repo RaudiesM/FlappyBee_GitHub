@@ -25,7 +25,6 @@ public class BeePoints : MonoBehaviour
             beeAudio.PlayPointsClip();
             text.text = points.ToString();
             beeTrigger.ResetPointBool();
-            Debug.Log(points);
         }
     }
 

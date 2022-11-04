@@ -7,7 +7,6 @@ public class BeeAudio : MonoBehaviour
     [field: SerializeField] public AudioClip collisionClip{get; private set;}
     [field: SerializeField] public AudioClip buzzClip{get; private set;}
     [field: SerializeField] public AudioClip pointsClip { get; private set; }
-    [SerializeField] private AudioClip backgroundMusic;
     private AudioManagement audioManagement;
 
     private void Awake()

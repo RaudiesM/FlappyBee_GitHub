@@ -8,8 +8,8 @@ public class BeeMovement : MonoBehaviour
     [SerializeField, Range(0, 100)] private float pushForce;
     private Vector3 flyingForce;
     private Rigidbody2D beeBody;
-    private bool isFlying;
-    private bool isFalling;
+    public bool isFlying { get; private set; }
+    public bool isFalling { get; private set; }
     public bool gameStart { get; private set; }
     private BeeAudio beeAudio;
 
@@ -33,9 +33,6 @@ public class BeeMovement : MonoBehaviour
     private void FixedUpdate()
     {
         HandleFlying();
-        //work in Progress
-        //HandleRotation();  
-
     }
 
     #region Check-Methods
@@ -55,11 +52,11 @@ public class BeeMovement : MonoBehaviour
     {
         if (beeBody.velocity.y > 0)
         {
-            isFalling = false;
+            isFalling = true;
         }
         else
         {
-            isFalling = true;
+            isFalling = false;
         }
     }
     private void CheckGameStart()
@@ -79,26 +76,10 @@ public class BeeMovement : MonoBehaviour
         if (isFlying)
         {
             beeBody.AddForce(flyingForce, ForceMode2D.Force);
+            //beeBody.velocity = flyingForce*Time.deltaTime*5;
             beeAudio.PlayBuzzClip();
         }
     }
-
-    private void HandleRotation()
-    {
-        if(isFalling)
-        {
-            if(transform.rotation.z >= -0.5663706f)
-            {
-                transform.Rotate(new Vector3(0, 0, -12 * Time.deltaTime));
-            }
-        }
-        else
-        {
-            if (transform.rotation.z <= 0.5663706f)
-            {
-                transform.Rotate(new Vector3(0, 0, 12 * Time.deltaTime));
-            }
-        }
-    }
+    
     #endregion
 }
