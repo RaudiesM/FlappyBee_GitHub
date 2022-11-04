@@ -6,8 +6,7 @@ using UnityEngine;
 
 public struct Obstacle
 {
-    [SerializeField, Range(-3, 3)] private float obstacleHeight;
-    [SerializeField, Range(0, 3)] private float gapHeight;
-    [SerializeField, Range(0, 1)] private float obstacleDistance;
-
+    [field: SerializeField, Range(-3, 3)] public float obstacleHeight { get; private set; }
+    [field: SerializeField, Range(0, 3)]  public float gapHeight { get; private set; }
+    [field: SerializeField, Range(0, 1)]  public float obstacleDistance { get; private set; }
 }

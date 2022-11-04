@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,9 @@ public class MoveObstacle : MonoBehaviour
     [SerializeField] private float lifespan;
     [SerializeField] private float startPositionX;
     private ObstacleSpawner obstacleSpawner;
-
-
-
+    private float currentXPosition;
+    private float currentYPosition;
+    private float currentGapHeight;
 
 
     private void Awake()
@@ -23,8 +24,18 @@ public class MoveObstacle : MonoBehaviour
 
     private void Start()
     {
-        SetUpPosition();
-        SetUpGap();
+        TakeValuesOfObstacleManager();
+
+
+        SetUpPosition(currentXPosition, currentYPosition);
+        SetUpGap(currentGapHeight);
+    }
+
+    private void TakeValuesOfObstacleManager()
+    {
+        currentXPosition = obstacleSpawner.positionXDifference;
+        currentYPosition = obstacleSpawner.positionYDifference;
+        currentGapHeight = obstacleSpawner.gapDifference;
     }
 
     private void Update()
@@ -44,18 +55,15 @@ public class MoveObstacle : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void SetUpPosition()
+    private void SetUpPosition(float xDifference, float yDifference)
     {
-        float positionDifference = obstacleSpawner.GetPosition();
-        float startHeight = Random.Range(-positionDifference, positionDifference);
-        transform.position = new Vector3(startPositionX, startHeight, 0);
+        transform.position = new Vector3(startPositionX + xDifference, yDifference, 0);
     }
 
-    private void SetUpGap()
+    private void SetUpGap(float gapDifference)
     {
-        float randomValue = Random.Range(0, 3);
-        topObstacle.transform.position += new Vector3(0, randomValue, 0);
-        bottomObstacle.transform.position -= new Vector3(0, randomValue, 0);
+        topObstacle.transform.position += new Vector3(0, gapDifference, 0);
+        bottomObstacle.transform.position -= new Vector3(0, gapDifference, 0);
     }
 
     void HandleObstacleMovement()
