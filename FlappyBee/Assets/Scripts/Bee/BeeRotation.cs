@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BeeRotation : MonoBehaviour
 {
+    
     private BeeMovement beeMovement;
     [SerializeField] private float beeRotationFactor;
+    [SerializeField, Range(0, 0.3f)] private float maxRotation;
 
     private void Start()
     {
@@ -14,23 +16,23 @@ public class BeeRotation : MonoBehaviour
 
     private void Update()
     {
-       HandleRotation();       
+       HandleRotation();
     }
 
     private void HandleRotation()
     {
-        if (beeMovement.isFlying == false)
+        if (beeMovement.isFlying)
         {
-            if (transform.rotation.z >= -0.3f)
+            if (transform.rotation.z <= maxRotation)
             {
-                transform.Rotate(new Vector3(0, 0, -beeRotationFactor * Time.deltaTime));
+                transform.Rotate(new Vector3(0, 0, beeRotationFactor * Time.deltaTime));
             }
         }
         else
-        {
-            if (transform.rotation.z <= 0.3f)
+        {   
+            if (transform.rotation.z >= -maxRotation)
             {
-                transform.Rotate(new Vector3(0, 0, beeRotationFactor * Time.deltaTime));
+                transform.Rotate(new Vector3(0, 0, -beeRotationFactor * Time.deltaTime));
             }
         }
 

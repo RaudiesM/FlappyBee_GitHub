@@ -134,8 +134,8 @@ MonoBehaviour:
   topObstacle: {fileID: 3537265926008232961}
   bottomObstacle: {fileID: 6247114932091797554}
   obstacleSpeed: 3.42
-  lifespan: 7
-  startPositionX: 13.58
+  lifespan: 8
+  startPositionX: 13
 --- !u!1 &3537265926008232961
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3537265926008232961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.2, z: 0}
+  m_LocalPosition: {x: 0, y: 6.6, z: 0}
   m_LocalScale: {x: 1, y: 9.652239, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -381,7 +381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247114932091797554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.2, z: 0}
+  m_LocalPosition: {x: 0, y: -6.6, z: 0}
   m_LocalScale: {x: 1, y: 9.652239, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

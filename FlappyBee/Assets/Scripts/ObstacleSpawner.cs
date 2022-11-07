@@ -14,6 +14,8 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] public float positionYDifference { get; private set; }
     [SerializeField] public float gapDifference { get; private set; }
 
+    [SerializeField] private bool random;
+
     ObstacleSpawnManager obstacleSpawnManager;
 
     int index;
@@ -31,18 +33,31 @@ public class ObstacleSpawner : MonoBehaviour
     }
     private void SpawnObstacle()
     {
-        SetUpObstacleIndex();
-        SetupVariables();
+        if (random)
+        {
+            SetupRandomVariables();
+        }
+        else
+        {
+            SetUpObstacleIndex();
+            SetupVariables();
+        }
         Instantiate(obstacle);
         //obstacle.transform.position = new Vector3(10, 10, 0);
     }
 
     private void SetupVariables()
     {
-        positionYDifference = obstacleInstance.obstacleDistance;
+        positionXDifference = obstacleInstance.obstacleDistance;
         positionYDifference = obstacleInstance.obstacleHeight;
         gapDifference = obstacleInstance.gapHeight;
-        Debug.Log(index);
+    }
+
+    private void SetupRandomVariables()
+    {
+        positionXDifference = Random.Range(0, 4);
+        positionYDifference = Random.Range(-3, 3);
+        gapDifference = Random.Range(0, 3);
     }
 
     private void SetUpObstacleIndex()

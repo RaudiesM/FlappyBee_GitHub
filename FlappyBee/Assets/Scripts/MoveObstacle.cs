@@ -16,6 +16,8 @@ public class MoveObstacle : MonoBehaviour
     private float currentYPosition;
     private float currentGapHeight;
 
+    public bool correctTop { get; private set; }
+    public bool correctBottom { get; private set; }
 
     private void Awake()
     {
@@ -26,17 +28,11 @@ public class MoveObstacle : MonoBehaviour
     {
         TakeValuesOfObstacleManager();
 
-
+        CheckForOutOfBounds();
         SetUpPosition(currentXPosition, currentYPosition);
         SetUpGap(currentGapHeight);
     }
 
-    private void TakeValuesOfObstacleManager()
-    {
-        currentXPosition = obstacleSpawner.positionXDifference;
-        currentYPosition = obstacleSpawner.positionYDifference;
-        currentGapHeight = obstacleSpawner.gapDifference;
-    }
 
     private void Update()
     {
@@ -48,6 +44,31 @@ public class MoveObstacle : MonoBehaviour
         HandleObstacleMovement();
 
     }
+    private void TakeValuesOfObstacleManager()
+    {
+        currentXPosition = obstacleSpawner.positionXDifference;
+        currentYPosition = obstacleSpawner.positionYDifference;
+        currentGapHeight = obstacleSpawner.gapDifference;
+    }
+
+    private void CheckForOutOfBounds()
+    {
+        if(currentYPosition > 1.2f || currentYPosition < 0)
+        {
+            float differenceSum = Mathf.Abs(currentYPosition) + currentGapHeight;
+            if (differenceSum >= 3)
+            {
+                if (currentYPosition > 0)
+                {
+                    correctTop = true;
+                }
+                else
+                {
+                    correctBottom = true;
+                }
+            }
+        }
+    }
 
     private IEnumerator DestroySelf()
     {
@@ -58,12 +79,28 @@ public class MoveObstacle : MonoBehaviour
     private void SetUpPosition(float xDifference, float yDifference)
     {
         transform.position = new Vector3(startPositionX + xDifference, yDifference, 0);
+        Debug.Log(xDifference);
     }
 
     private void SetUpGap(float gapDifference)
     {
-        topObstacle.transform.position += new Vector3(0, gapDifference, 0);
-        bottomObstacle.transform.position -= new Vector3(0, gapDifference, 0);
+        if (correctTop)
+        {
+            topObstacle.transform.position += new Vector3(0, 0, 0);
+        }
+        else
+        {
+            topObstacle.transform.position += new Vector3(0, gapDifference, 0);
+        }
+
+        if (correctBottom)
+        {
+            bottomObstacle.transform.position -= new Vector3(0, 0, 0);
+        }
+        else
+        {
+            bottomObstacle.transform.position -= new Vector3(0, gapDifference, 0);
+        }
     }
 
     void HandleObstacleMovement()
