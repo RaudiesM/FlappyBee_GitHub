@@ -15,6 +15,9 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] public float gapDifference { get; private set; }
 
     [SerializeField] private bool random;
+    [SerializeField] private float obstacleHeight;
+    [SerializeField]  private float gapHeight;
+    [SerializeField]  private float obstacleDistance;
 
     ObstacleSpawnManager obstacleSpawnManager;
 
@@ -55,9 +58,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SetupRandomVariables()
     {
-        positionXDifference = Random.Range(0, 4);
-        positionYDifference = Random.Range(-3, 3);
-        gapDifference = Random.Range(0, 3);
+        positionXDifference = Random.Range(0, obstacleDistance);
+        positionYDifference = Random.Range(-obstacleHeight, obstacleHeight);
+        gapDifference = Random.Range(0, gapHeight);
     }
 
     private void SetUpObstacleIndex()

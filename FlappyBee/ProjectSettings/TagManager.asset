@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Flower
+    uniqueID: 3658826229
+    locked: 0
+  - name: Clouds
+    uniqueID: 1640131275
+    locked: 0
+  - name: Sky
+    uniqueID: 3601937017
+    locked: 0
