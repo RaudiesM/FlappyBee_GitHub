@@ -31,11 +31,6 @@ public class MoveObstacle : MonoBehaviour
         CheckForOutOfBounds();
         SetUpPosition(currentXPosition, currentYPosition);
         SetUpGap(currentGapHeight);
-    }
-
-
-    private void Update()
-    {
         StartCoroutine(DestroySelf());
     }
 
