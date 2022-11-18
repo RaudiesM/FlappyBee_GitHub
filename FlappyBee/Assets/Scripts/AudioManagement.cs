@@ -7,7 +7,6 @@ public class AudioManagement : MonoBehaviour
     public static AudioManagement instance;
     public AudioSource musicSource; 
     public AudioSource effectSource;
-    public AudioSource buzzSource;
 
     private void Awake()
     {
@@ -25,15 +24,6 @@ public class AudioManagement : MonoBehaviour
     public void PlaySoundEffect(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
-    }
-
-    public void PlayBuzzEffect()
-    {
-        buzzSource.Play();
-    }
-    public void StopBuzzEffect()
-    {
-        buzzSource.Stop();
     }
 
 }

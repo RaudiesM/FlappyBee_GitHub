@@ -7,6 +7,7 @@ public class BeeAudio : MonoBehaviour
     [field: SerializeField] public AudioClip collisionClip{get; private set;}
     [field: SerializeField] public AudioClip buzzClip{get; private set;}
     [field: SerializeField] public AudioClip pointsClip { get; private set; }
+    [field: SerializeField] public AudioClip schleckClip { get; private set; }
     private AudioManagement audioManagement;
 
     private void Awake()
@@ -27,5 +28,10 @@ public class BeeAudio : MonoBehaviour
     public void PlayBuzzClip()
     {
         audioManagement.PlaySoundEffect(buzzClip);
+    }
+
+    public void PlaySchleckClip()
+    {
+        audioManagement.PlaySoundEffect(schleckClip);
     }
 }

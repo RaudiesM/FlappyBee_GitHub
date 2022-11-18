@@ -8,7 +8,8 @@ public class BeePoints : MonoBehaviour
 {
     public TextMeshProUGUI text;
     private BeeTrigger beeTrigger;
-    private float points;
+    public float points { get; private set; }
+    private float lastPoints;
     private BeeAudio beeAudio;
 
     private void Start()
@@ -19,13 +20,30 @@ public class BeePoints : MonoBehaviour
 
     private void Update()
     {
-        if(beeTrigger.hitPoints)
+        UpdatePoints();
+        UpdateText();
+    }
+    private void UpdatePoints()
+    {
+        if (beeTrigger.hitPoints)
         {
             points++;
             beeAudio.PlayPointsClip();
-            text.text = points.ToString();
             beeTrigger.ResetPointBool();
         }
+    }
+    private void UpdateText()
+    {
+        if(points != lastPoints)
+        {
+            text.text = points.ToString();
+            lastPoints = points;
+        }
+    }
+
+    public void PandaBonusPoints(float bonus)
+    {
+            points += bonus;
     }
 
 }

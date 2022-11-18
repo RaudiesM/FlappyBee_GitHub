@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1b8dd03387bbe418e20d9ef29245e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8610753343474522873}
+  pandaAnimator: {fileID: 8610753343474522873}
+  pandaBonus: 10
 --- !u!95 &8610753343474522873
 Animator:
   serializedVersion: 4
@@ -137,9 +138,10 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -2.928078, y: -0.38311797}
-  - {x: -2.6010046, y: -0.5065375}
-  - {x: -1.9092985, y: -0.18907204}
-  - {x: -1.7002621, y: 0.13624588}
+  - {x: -2.581181, y: -0.60941195}
+  - {x: -2.210354, y: -0.5554769}
+  - {x: -1.8372802, y: -0.2225325}
+  - {x: -1.3474725, y: 0.30872345}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

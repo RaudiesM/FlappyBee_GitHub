@@ -7,11 +7,13 @@ public class PandaSpawner : MonoBehaviour
     [SerializeField] private GameObject panda;
     [SerializeField] private Vector3 startPosition;
     [SerializeField] private float startTime;
-    [SerializeField] private float spawnTime;
+    private float spawnTime;
+    [SerializeField] private float[] range;
 
 
     private void Start()
     {
+        spawnTime = Random.Range(range[0], range[1]);
         InvokeRepeating("SpawnPanda", startTime, spawnTime);
         panda.transform.position = startPosition;
 
@@ -20,7 +22,7 @@ public class PandaSpawner : MonoBehaviour
     private void SpawnPanda()
     {
         Instantiate(panda);
-        spawnTime = Random.Range(60, 100);
+        spawnTime = Random.Range(range[0], range[1]);
     }
 
 }

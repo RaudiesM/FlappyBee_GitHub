@@ -74,7 +74,7 @@ public class MoveObstacle : MonoBehaviour
     private void SetUpPosition(float xDifference, float yDifference)
     {
         transform.position = new Vector3(startPositionX + xDifference, yDifference, 0);
-        Debug.Log(xDifference);
+        //Debug.Log(xDifference);
     }
 
     private void SetUpGap(float gapDifference)

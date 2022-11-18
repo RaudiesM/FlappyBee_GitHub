@@ -4,25 +4,45 @@ using UnityEngine;
 
 public class FullWithHoney : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] Animator pandaAnimator;
+    [SerializeField] private float pandaBonus;
+    private int honeyCounter;
+    private BeePoints beePoints;
+    BeeAudio beeAudio;
 
-   
-
+    private void Start()
+    {
+        beePoints = FindObjectOfType<BeePoints>();
+        beeAudio = FindObjectOfType<BeeAudio>();
+    }
 
     private void OnParticleCollision(GameObject other)
     {
-        if (animator.GetBool("honeyed") == false)
-        {
-            StartCoroutine(EatHoney());       
-        }
+        honeyCounter++;
     }
 
 
+    private void Update()
+    {
+        
+        //Debug.Log(honeyCounter);
+        if(honeyCounter >= 7)
+        {
+            if (pandaAnimator.GetBool("honeyed") == false)
+            {
+                StartCoroutine(EatHoney());
+            }
+        }
+    }
+
     private IEnumerator EatHoney()
     {
-        animator.SetBool("honeyed", true);
+        pandaAnimator.SetBool("honeyed", true);
         Debug.Log("Panda gefüttert");
+        beeAudio.PlaySchleckClip();
         yield return new WaitForSeconds(1);
-        animator.SetBool("honeyed", false);
+        beePoints.PandaBonusPoints(pandaBonus);
+        pandaAnimator.SetBool("honeyed", false);
+        honeyCounter = 0;
     }
 }
