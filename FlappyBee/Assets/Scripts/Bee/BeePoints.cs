@@ -8,7 +8,7 @@ public class BeePoints : MonoBehaviour
 {
     public TextMeshProUGUI text;
     private BeeTrigger beeTrigger;
-    public float points { get; private set; }
+    public int points { get; private set; }
     private float lastPoints;
     private BeeAudio beeAudio;
 
@@ -41,7 +41,7 @@ public class BeePoints : MonoBehaviour
         }
     }
 
-    public void PandaBonusPoints(float bonus)
+    public void PandaBonusPoints(int bonus)
     {
             points += bonus;
     }

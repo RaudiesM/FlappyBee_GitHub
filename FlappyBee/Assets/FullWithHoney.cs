@@ -5,7 +5,7 @@ using UnityEngine;
 public class FullWithHoney : MonoBehaviour
 {
     [SerializeField] Animator pandaAnimator;
-    [SerializeField] private float pandaBonus;
+    [SerializeField] private int pandaBonus;
     private int honeyCounter;
     private BeePoints beePoints;
     BeeAudio beeAudio;
