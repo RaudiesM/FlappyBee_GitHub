@@ -167,10 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b5f7945b3408a42915649f5cc22a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <collisionClip>k__BackingField: {fileID: 8300000, guid: 7a51a3462a22d554f8c50fd2dbb4b73e, type: 3}
+  <collisionClip>k__BackingField: {fileID: 8300000, guid: 811fa8ed51b8e064792737a3fa82e533, type: 3}
   <buzzClip>k__BackingField: {fileID: 8300000, guid: 8b53b433d843f864492d7d02abf29878, type: 3}
   <pointsClip>k__BackingField: {fileID: 8300000, guid: ee49dddb788a6f04c87e5bf3d100dc45, type: 3}
-  <schleckClip>k__BackingField: {fileID: 8300000, guid: 9a8dc8d6ff866954f94fc5cbc7aebf88, type: 3}
+  <schleckClip>k__BackingField: {fileID: 8300000, guid: 65cb7975037c6924cbe46516a11ab7f9, type: 3}
 --- !u!1 &323246277
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,66 +420,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &525985900
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 525985903}
-  - component: {fileID: 525985902}
-  - component: {fileID: 525985901}
-  m_Layer: 0
-  m_Name: VisualScripting SceneVariables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &525985901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525985900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &525985902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525985900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!4 &525985903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525985900}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &581328429
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +548,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629890719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -814,51 +754,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <tutorialPattern>k__BackingField:
     <obstacles>k__BackingField:
-    - <obstacleHeight>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 0.75
       <gapHeight>k__BackingField: 1.5
       <obstacleDistance>k__BackingField: 0
-    - <obstacleHeight>k__BackingField: -1
+    - <obstacleHeight>k__BackingField: -0.53
       <gapHeight>k__BackingField: 1
-      <obstacleDistance>k__BackingField: 0.13
-    - <obstacleHeight>k__BackingField: -0.69
-      <gapHeight>k__BackingField: 1.1
       <obstacleDistance>k__BackingField: 0
-    - <obstacleHeight>k__BackingField: 3
+    - <obstacleHeight>k__BackingField: 1.39
       <gapHeight>k__BackingField: 1
-      <obstacleDistance>k__BackingField: 3
-    - <obstacleHeight>k__BackingField: 2
-      <gapHeight>k__BackingField: 1
+      <obstacleDistance>k__BackingField: 2.25
+    - <obstacleHeight>k__BackingField: -1.1
+      <gapHeight>k__BackingField: 2
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 1.05
+      <gapHeight>k__BackingField: 0.7
       <obstacleDistance>k__BackingField: 0
   <obstaclePatterns>k__BackingField:
   - <obstacles>k__BackingField:
-    - <obstacleHeight>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 0.75
       <gapHeight>k__BackingField: 1.5
       <obstacleDistance>k__BackingField: 0
-    - <obstacleHeight>k__BackingField: 0
-      <gapHeight>k__BackingField: 0.97
-      <obstacleDistance>k__BackingField: 0.33
-    - <obstacleHeight>k__BackingField: 0
-      <gapHeight>k__BackingField: 1.88
-      <obstacleDistance>k__BackingField: 0.94
-  - <obstacles>k__BackingField:
+    - <obstacleHeight>k__BackingField: -0.53
+      <gapHeight>k__BackingField: 1
+      <obstacleDistance>k__BackingField: 0
     - <obstacleHeight>k__BackingField: 1.39
       <gapHeight>k__BackingField: 1
-      <obstacleDistance>k__BackingField: 2.24
-    - <obstacleHeight>k__BackingField: -3
-      <gapHeight>k__BackingField: 1.11
+      <obstacleDistance>k__BackingField: 2.25
+    - <obstacleHeight>k__BackingField: -1.1
+      <gapHeight>k__BackingField: 2
       <obstacleDistance>k__BackingField: 0
-    - <obstacleHeight>k__BackingField: 0.8
-      <gapHeight>k__BackingField: 1
+    - <obstacleHeight>k__BackingField: 1.05
+      <gapHeight>k__BackingField: 0.7
       <obstacleDistance>k__BackingField: 0
   - <obstacles>k__BackingField:
-    - <obstacleHeight>k__BackingField: -1.69
-      <gapHeight>k__BackingField: 1
-      <obstacleDistance>k__BackingField: 2.41
-    - <obstacleHeight>k__BackingField: 0.69
+    - <obstacleHeight>k__BackingField: 0.75
+      <gapHeight>k__BackingField: 1.5
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: -0.53
       <gapHeight>k__BackingField: 1
       <obstacleDistance>k__BackingField: 0
-    - <obstacleHeight>k__BackingField: 3
+    - <obstacleHeight>k__BackingField: 1.39
       <gapHeight>k__BackingField: 1
+      <obstacleDistance>k__BackingField: 2.25
+    - <obstacleHeight>k__BackingField: -1.1
+      <gapHeight>k__BackingField: 2
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 1.05
+      <gapHeight>k__BackingField: 0.7
+      <obstacleDistance>k__BackingField: 0
+  - <obstacles>k__BackingField:
+    - <obstacleHeight>k__BackingField: 0.75
+      <gapHeight>k__BackingField: 1.5
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: -0.53
+      <gapHeight>k__BackingField: 0.29
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 1.39
+      <gapHeight>k__BackingField: 0.64
+      <obstacleDistance>k__BackingField: 2.25
+    - <obstacleHeight>k__BackingField: -1.1
+      <gapHeight>k__BackingField: 0.97
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 1.05
+      <gapHeight>k__BackingField: 0.7
+      <obstacleDistance>k__BackingField: 0
+  - <obstacles>k__BackingField:
+    - <obstacleHeight>k__BackingField: 3
+      <gapHeight>k__BackingField: 2
+      <obstacleDistance>k__BackingField: 3
+    - <obstacleHeight>k__BackingField: -3
+      <gapHeight>k__BackingField: 2
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 0.34
+      <gapHeight>k__BackingField: 0.45
+      <obstacleDistance>k__BackingField: 0.17
+    - <obstacleHeight>k__BackingField: -0.39
+      <gapHeight>k__BackingField: 0
+      <obstacleDistance>k__BackingField: 0
+    - <obstacleHeight>k__BackingField: 0.38
+      <gapHeight>k__BackingField: 0.69
       <obstacleDistance>k__BackingField: 0
 --- !u!114 &712844815
 MonoBehaviour:
@@ -6495,7 +6469,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7076,10 +7050,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panda: {fileID: 5473912592914771910, guid: 9d8d54f34e151ff4493b615e5f1962cd, type: 3}
   startPosition: {x: 10, y: -3, z: 1.5}
-  startTime: 2
+  startTime: 20
   range:
-  - 10
-  - 20
+  - 60
+  - 80
 --- !u!1 &1905647916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,7 +7098,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c997e1f936d5b74eb93d5a49922b825, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.064
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0

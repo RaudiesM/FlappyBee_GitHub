@@ -12,16 +12,18 @@ public class MoveObstacle : MonoBehaviour
     [SerializeField] private float lifespan;
     [SerializeField] private float startPositionX;
     private ObstacleSpawner obstacleSpawner;
+    private BeePoints beePoints;
     private float currentXPosition;
     private float currentYPosition;
     private float currentGapHeight;
-
+    public float gapDifficulty { get; private set;}
     public bool correctTop { get; private set; }
     public bool correctBottom { get; private set; }
 
     private void Awake()
     {
         obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
+        beePoints = FindObjectOfType<BeePoints>();
     }
 
     private void Start()
@@ -29,10 +31,12 @@ public class MoveObstacle : MonoBehaviour
         TakeValuesOfObstacleManager();
 
         CheckForOutOfBounds();
+        AdjustDifficulty();
         SetUpPosition(currentXPosition, currentYPosition);
         SetUpGap(currentGapHeight);
         StartCoroutine(DestroySelf());
     }
+
 
     private void FixedUpdate()
     {
@@ -63,6 +67,13 @@ public class MoveObstacle : MonoBehaviour
                 }
             }
         }
+    }
+    private void AdjustDifficulty()
+    {
+        RaiseGapDifficulty();
+        currentGapHeight -= currentGapHeight * gapDifficulty;
+        currentXPosition -= currentXPosition * (gapDifficulty / 2);
+        //Debug.Log("currentGapHeight: " + currentGapHeight);
     }
 
     private IEnumerator DestroySelf()
@@ -107,4 +118,14 @@ public class MoveObstacle : MonoBehaviour
             );
     }
 
+    public void RaiseGapDifficulty()
+    {
+        float highscore = beePoints.points;
+
+        if(highscore > 25 && gapDifficulty <1)
+        {
+            gapDifficulty = (highscore - 25) / 100;
+        }
+        //Debug.Log("gapDifficulty: " + gapDifficulty);
+    }
 }

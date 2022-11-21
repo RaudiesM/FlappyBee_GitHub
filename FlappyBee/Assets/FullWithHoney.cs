@@ -38,7 +38,6 @@ public class FullWithHoney : MonoBehaviour
     private IEnumerator EatHoney()
     {
         pandaAnimator.SetBool("honeyed", true);
-        Debug.Log("Panda gefüttert");
         beeAudio.PlaySchleckClip();
         yield return new WaitForSeconds(1);
         beePoints.PandaBonusPoints(pandaBonus);
