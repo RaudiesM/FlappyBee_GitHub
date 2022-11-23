@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class BeeMovement : MonoBehaviour
 {
+    public bool IsFlying { get; private set; }
+    public bool IsFalling { get; private set; }
+    public bool gameStart { get; private set; }
     [SerializeField, Range(0, 100)] private float pushForce;
     private Vector3 flyingForce;
     private Rigidbody2D beeBody;
-    public bool isFlying { get; private set; }
-    public bool isFalling { get; private set; }
-    public bool gameStart { get; private set; }
     private BeeAudio beeAudio;
-
 
     private void Start()
     {
@@ -21,7 +20,6 @@ public class BeeMovement : MonoBehaviour
         flyingForce = new Vector2(0, pushForce);
     }
 
-    
     private void Update()
     {
         CheckInput();
@@ -29,22 +27,22 @@ public class BeeMovement : MonoBehaviour
         CheckGameStart();
     }
 
-
     private void FixedUpdate()
     {
         HandleFlying();
     }
+
 
     #region Check-Methods
     private void CheckInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isFlying = true;
+            IsFlying = true;
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            isFlying = false;
+            IsFlying = false;
         }
     }
 
@@ -52,11 +50,11 @@ public class BeeMovement : MonoBehaviour
     {
         if (beeBody.velocity.y > 0)
         {
-            isFalling = true;
+            IsFalling = true;
         }
         else
         {
-            isFalling = false;
+            IsFalling = false;
         }
     }
     private void CheckGameStart()
@@ -73,12 +71,12 @@ public class BeeMovement : MonoBehaviour
 
     private void HandleFlying()
     {
-        if (isFlying)
+        if (IsFlying)
         {
             beeBody.AddForce(flyingForce, ForceMode2D.Force);
-            //beeBody.velocity = flyingForce*Time.deltaTime*5;
-            beeAudio.PlayBuzzClip();
         }
+        
+        beeAudio.Buzzing(IsFlying, transform.position.y);
     }
     
     #endregion

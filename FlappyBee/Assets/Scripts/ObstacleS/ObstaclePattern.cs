@@ -5,6 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public struct ObstaclePattern
 {
-    [field: SerializeField] public Obstacle[] obstacles { get; private set; }
+    [field: SerializeField] public Obstacle[] Obstacles { get; private set; }
 
 }

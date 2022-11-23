@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BeeRotation : MonoBehaviour
-{
-    
+{   
     private BeeMovement beeMovement;
     [SerializeField] private float beeRotationFactor;
     [SerializeField, Range(0, 0.3f)] private float maxRotation;
@@ -21,7 +20,7 @@ public class BeeRotation : MonoBehaviour
 
     private void HandleRotation()
     {
-        if (beeMovement.isFlying)
+        if (beeMovement.IsFlying)
         {
             if (transform.rotation.z <= maxRotation)
             {
@@ -35,7 +34,5 @@ public class BeeRotation : MonoBehaviour
                 transform.Rotate(new Vector3(0, 0, -beeRotationFactor * Time.deltaTime));
             }
         }
-
     }
-
 }

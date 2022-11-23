@@ -6,8 +6,8 @@ using UnityEngine;
 public class BeeHoneyDrop : MonoBehaviour
 {
     [SerializeField] private ParticleSystem honeyParticles;
-    private Rigidbody2D beeBody;
     [SerializeField] private float honeyDropVelocity;
+    private Rigidbody2D beeBody;
 
     private void Start()
     {
@@ -28,9 +28,7 @@ public class BeeHoneyDrop : MonoBehaviour
         }
         else
         {
-            
             emission.enabled = false;
         }
     }
-
 }

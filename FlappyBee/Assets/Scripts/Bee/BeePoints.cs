@@ -6,9 +6,9 @@ using TMPro;
 
 public class BeePoints : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public int Points { get; private set; }
+    [SerializeField] private TextMeshProUGUI text;
     private BeeTrigger beeTrigger;
-    public int points { get; private set; }
     private float lastPoints;
     private BeeAudio beeAudio;
 
@@ -23,27 +23,28 @@ public class BeePoints : MonoBehaviour
         UpdatePoints();
         UpdateText();
     }
+
     private void UpdatePoints()
     {
-        if (beeTrigger.hitPoints)
+        if (beeTrigger.HitPoints)
         {
-            points++;
+            Points++;
             beeAudio.PlayPointsClip();
             beeTrigger.ResetPointBool();
         }
     }
+
     private void UpdateText()
     {
-        if(points != lastPoints)
+        if(Points != lastPoints)
         {
-            text.text = points.ToString();
-            lastPoints = points;
+            text.text = Points.ToString();
+            lastPoints = Points;
         }
     }
 
     public void PandaBonusPoints(int bonus)
     {
-            points += bonus;
+            Points += bonus;
     }
-
 }

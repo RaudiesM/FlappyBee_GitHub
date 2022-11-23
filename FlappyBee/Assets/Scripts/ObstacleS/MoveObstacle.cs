@@ -45,9 +45,9 @@ public class MoveObstacle : MonoBehaviour
     }
     private void TakeValuesOfObstacleManager()
     {
-        currentXPosition = obstacleSpawner.positionXDifference;
-        currentYPosition = obstacleSpawner.positionYDifference;
-        currentGapHeight = obstacleSpawner.gapDifference;
+        currentXPosition = obstacleSpawner.PositionXDifference;
+        currentYPosition = obstacleSpawner.PositionYDifference;
+        currentGapHeight = obstacleSpawner.GapDifference;
     }
 
     private void CheckForOutOfBounds()
@@ -120,7 +120,7 @@ public class MoveObstacle : MonoBehaviour
 
     public void RaiseGapDifficulty()
     {
-        float highscore = beePoints.points;
+        float highscore = beePoints.Points;
 
         if(highscore > 25 && gapDifficulty <1)
         {

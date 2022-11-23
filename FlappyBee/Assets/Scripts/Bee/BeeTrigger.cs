@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class BeeTrigger : MonoBehaviour
 {
-    public bool hitPoints { get; private set; }
+    public bool HitPoints { get; private set; }
+    public bool Collided { get; private set; }
+    private BeeAudio beeAudio;
 
+    private void Start()
+    {
+        beeAudio = FindObjectOfType<BeeAudio>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Gap"))
         {
-            hitPoints = true;
+            HitPoints = true;
         }
-
-        if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("You hit something");
+            beeAudio.PlayCollisionClip();
+            Collided = true;
         }
     }
 
     public void ResetPointBool()
     {
-        hitPoints = false;
+        HitPoints = false;
     }
-
 }

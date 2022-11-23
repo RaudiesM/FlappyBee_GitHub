@@ -6,13 +6,15 @@ public class BeeAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private BeeMovement beeMovement;
+
     private void Start()
     {
         beeMovement = FindObjectOfType<BeeMovement>();
     }
+
     private void Update()
     {
-        if (beeMovement.isFlying)
+        if (beeMovement.IsFlying)
         {
             animator.SetBool("isFlying", true);
         }

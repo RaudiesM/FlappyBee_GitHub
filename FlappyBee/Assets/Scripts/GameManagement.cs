@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManagement : MonoBehaviour
 {
     private BeeMovement beeMovement;
-    private BeeCollision beeCollision;
-
+    private BeeTrigger beeTrigger;
     [SerializeField] private GameObject endscreen;
 
     private void Awake()
     {
         beeMovement = FindObjectOfType<BeeMovement>();
-        beeCollision = FindObjectOfType<BeeCollision>();
+        beeTrigger = FindObjectOfType<BeeTrigger>();
         PauseGame();
     }
 
@@ -44,9 +43,10 @@ public class GameManagement : MonoBehaviour
             StartGame();
         }
     }
+
     private void PauseOnCollision()
     {
-        if (beeCollision.collided)
+        if (beeTrigger.Collided)
         {
             PauseGame();
             LoadEndscreen(true);
@@ -57,5 +57,4 @@ public class GameManagement : MonoBehaviour
     {
         endscreen.SetActive(isActive);
     }
-
 }

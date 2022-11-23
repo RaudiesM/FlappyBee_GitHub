@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BeeCollision : MonoBehaviour
 {
-    private BeeAudio beeAudio;
     public bool collided { get; private set; }
+    private BeeAudio beeAudio;
 
     private void Start()
     {
         beeAudio = FindObjectOfType<BeeAudio>();
     }
 
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
@@ -21,5 +20,4 @@ public class BeeCollision : MonoBehaviour
                 collided = true;
             }
     }
-
 }
